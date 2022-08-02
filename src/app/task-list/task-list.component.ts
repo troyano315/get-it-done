@@ -7,11 +7,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskListComponent implements OnInit {
 
-  tasks: string[] = ['walk the dog', 'wash dishes', 'mow lawn'];
+  tasks: Task[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  addTask(task: string) {
+    if (task === '') {
+      return;
+    }
+
+    this.tasks.push(new Task(task));
+  }
+
+}
+
+class Task {
+
+  name: string;
+  isComplete: boolean = false;
+
+  constructor(name: string) {
+    this.name = name;
   }
 
 }
