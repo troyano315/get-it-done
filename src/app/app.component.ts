@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Get It Done';
+  taskTotal: number =0 ;
 }
